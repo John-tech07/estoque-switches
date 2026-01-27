@@ -16,7 +16,9 @@ const Login = () => {
     setError("");
 
     if (!email || !password) {
-      setError("Preencha email e senha.");
+      const msg = "Preencha email e senha.";
+      setError(msg);
+      alert(msg);
       return;
     }
 
@@ -42,7 +44,6 @@ const Login = () => {
         return;
       }
 
-      // salva usuário logado
       localStorage.setItem("user", JSON.stringify(data));
 
       navigate("/inventory");
@@ -61,8 +62,6 @@ const Login = () => {
           <h1>Acesso ao Estoque</h1>
           <p>Gerenciamento de Switches</p>
         </div>
-
-        {error && <p className="error-message">{error}</p>}
 
         <div className="input-field">
           <User size={25} className="icon" />
