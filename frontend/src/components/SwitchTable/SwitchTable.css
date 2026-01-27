@@ -1,0 +1,71 @@
+.switch-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.switch-table th {
+  background-color: #0f5132;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+.switch-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.switch-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.actions svg {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.empty {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.status.ativo {
+  background-color: #198754;
+}
+
+.status.inativo {
+  background-color: #dc3545;
+}
+
+.status.em-manutencao {
+  background-color: #f1c40f;
+  color: #3d2f0f;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+.icon-btn.delete {
+  color: #ff6b6b;
+}
+
+.icon-btn.edit {
+  color: #f1c40f;
+}

@@ -1,0 +1,153 @@
+.inventory-container {
+  padding: 40px;
+  color: #fff;
+}
+
+.inventory-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+.inventory-container {
+  background-color: #0f3d2e; 
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 12px;
+}
+
+.inventory-header h1 {
+  color: #ffffff;
+}
+
+.add-button {
+  background-color: #037a49;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.add-button:hover {
+  background-color: #04965a;
+}
+
+.inventory-search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.inventory-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.inventory-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status.ativo {
+  background-color: #2ecc71;
+  color: #0f3d2e;
+}
+
+.status.em-manutencao {
+  background-color: #f1c40f;
+  color: #3d2f0f;
+}
+
+
+.action-btn-edit,
+.action-btn-delete {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn-edit:hover {
+  color: #4fd1c5; 
+}
+
+.action-btn-delete:hover {
+  color: #ff6b6b; 
+}
+
+
+.actions {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: #cc382e;
+  border: none;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #d64545;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
