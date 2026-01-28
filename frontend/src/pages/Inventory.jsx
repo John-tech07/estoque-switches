@@ -10,6 +10,7 @@ const Inventory = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -76,6 +77,15 @@ const Inventory = () => {
   if (!isAuthenticated) {
     return <div className="loading">Carregando...</div>;
   }
+  const filteredSwitches = switches.filter((sw) => {
+    const term = search.toLowerCase();
+
+    return (
+      sw.modelo.toLowerCase().includes(term) ||
+      sw.serial.toLowerCase().includes(term) ||
+      sw.localizacao.toLowerCase().includes(term)
+    );
+  });
 
   return (
     <div className="inventory-page">
@@ -98,13 +108,15 @@ const Inventory = () => {
           <input
             type="text"
             placeholder="Pesquisar por modelo, serial ou localização..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
 
         <div className="table-container">
           <div className="table-container">
             <SwitchTable
-              switches={switches}
+              switches={filteredSwitches}
               onDelete={handleDelete}
               onEdit={handleEdit}
             />
