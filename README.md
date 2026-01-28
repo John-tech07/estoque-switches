@@ -101,11 +101,22 @@ CREATE TABLE switches (
     localizacao VARCHAR(100) DEFAULT 'estoque',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
+### 5️⃣ Criação do usuário do projeto (obrigatório)
+```
+CREATE USER 'estoque_user'@'localhost' IDENTIFIED BY 'estoque123';
 
 ```
+6️⃣ Concessão de permissões
+```
+GRANT ALL PRIVILEGES ON estoque_switches.* TO 'estoque_user'@'localhost';
+FLUSH PRIVILEGES;
 
-### 3️⃣ Ajustar credenciais do banco
+```
+✔️ Esse usuário será utilizado exclusivamente pelo backend da aplicação.
+``
+
+### 7️⃣ Ajustar credenciais do banco
 
 Edite o arquivo:
 
@@ -139,6 +150,8 @@ source venv/bin/activate
 
 # Windows
 venv\Scripts\activate
+
+⚠️ Certifique-se de que o VS Code está usando o interpretador do venv.
 
 # atualizar pip
 python -m pip install --upgrade pip
