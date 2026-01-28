@@ -119,28 +119,26 @@ def add_switch():
 @app.route('/switches', methods=['GET'])
 def get_switches():
     conn = get_db_connection()
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT * FROM switches")
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("""
+    SELECT
+        id,
+        modelo,
+        marca,
+        numero_portas,
+        serial,
+        localizacao,
+        status,
+        created_at
+    FROM switches
+    """)
     rows = cursor.fetchall()
 
     cursor.close()
     conn.close()
 
-    switches = []
-    for row in rows:
-        switches.append({
-            "id": row[0],
-            "modelo": row[1],
-            "marca": row[2],
-            "numero_portas": row[3],
-            "serial": row[4],
-            "status": row[5],
-            "localizacao": row[6],
-            "created_at": row[7]
-        })
+    return jsonify(rows), 200
 
-    return jsonify(switches), 200
 
 
 @app.route('/switches/<int:id>', methods=['PUT'])
