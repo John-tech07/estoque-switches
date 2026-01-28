@@ -69,3 +69,9 @@
 .icon-btn.edit {
   color: #f1c40f;
 }
+
+.inventory-table td:nth-child(4),
+.inventory-table th:nth-child(4) {
+  text-align: center;
+}
+

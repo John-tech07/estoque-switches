@@ -9,6 +9,7 @@ const SwitchTable = ({ switches, onDelete, onEdit }) => {
           <th>Modelo</th>
           <th>Nº de Série</th>
           <th>Marca</th>
+          <th>Nº de Portas</th> 
           <th>Localização</th>
           <th>Status</th>
           <th>Ações</th>
@@ -28,6 +29,7 @@ const SwitchTable = ({ switches, onDelete, onEdit }) => {
               <td>{sw.modelo}</td>
               <td>{sw.serial}</td>
               <td>{sw.marca}</td>
+              <td>{sw.numero_portas}</td> 
               <td>{sw.localizacao}</td>
               <td>
                 <span className={`status ${statusClass}`}>{sw.status}</span>
